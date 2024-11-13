@@ -202,7 +202,7 @@ if "__main__" == __name__:
     )
 
     #If one wants to use input Particle
-    inputParticlePath = Path(srcdir / "Root_input_LLP/Particles_DarkHiggs_m0.8128_mu_mu.root")
+    inputParticlePath = Path("Input_path")
     if not inputParticlePath.exists():
         print("File does not exist")
         inputParticlePath = None
