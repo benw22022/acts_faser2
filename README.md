@@ -3,7 +3,7 @@
 
 #### Clone repo
 ```
-git clone https://github.com/OlivierSalin/acts__F2.git acts_faser2
+git clone https://github.com/OlivierSalin/Faser2_acts.git acts_faser2
 cd acts_faser2
 git submodule update --init
 ```
