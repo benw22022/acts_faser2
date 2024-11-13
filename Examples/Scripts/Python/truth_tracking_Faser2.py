@@ -200,8 +200,9 @@ if "__main__" == __name__:
         bounds=bounds_dimensions, positions=pos, binValue=X_axis, thickness=thickness, stereos=stereo_layers,
         boundsX=boundsX, boundsY=boundsY, Type_surf=type_surface
     )
-    
-    inputParticlePath = Path("/eos/user/o/osalin/FASER2/FASER2_ACTS_tool/HEPMC_ROOT/Root_LLP/Root_DarkHiggs_X_good/Particles_DarkHiggs_m0.8128_mu_mu.root")
+
+    #If one wants to use input Particle
+    inputParticlePath = Path(srcdir / "Root_input_LLP/Particles_DarkHiggs_m0.8128_mu_mu.root")
     if not inputParticlePath.exists():
         print("File does not exist")
         inputParticlePath = None
@@ -215,8 +216,8 @@ if "__main__" == __name__:
     ## Restricted Magnetic Field Option with the dimension of Samurai magnet
     field = acts.RestrictedBField(acts.Vector3(0, 0 * u.T, 1.0 * u.T))
     
-    ## Restricted Magnetic Field Option with the dimension of Industrial magnet for 3 Modules 
-    # field = acts.RestrictedBField_Indu(acts.Vector3(0, 0 * u.T, 0.4 * u.T))
+    ## Restricted Magnetic Field Option with the dimension of Industrial magnet for 3 Modules (2 and 4 Modules option also exist) 
+    # field = acts.RestrictedBField_Indu_3Modules(acts.Vector3(0, 0 * u.T, 0.4 * u.T))
 
     runTruthTrackingFaser2(
         trackingGeometry,
