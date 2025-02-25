@@ -3,9 +3,8 @@
 
 #### Clone repo
 ```
-git clone https://github.com/OlivierSalin/Faser2_acts.git acts_faser2
+git clone https://github.com/benw22022/acts_faser2
 cd acts_faser2
-git clone  https://gitlab.cern.ch/acts/OpenDataDetector.git thirdparty/OpenDataDetector
 ```
 #### Install all dependencies if access to cvmfs
 ```
@@ -21,7 +20,6 @@ cmake -B acts-build -S acts_faser2 \
   -GNinja \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DCMAKE_INSTALL_PREFIX="acts-install" \
-  -DACTS_BUILD_ODD=ON \
   -DACTS_BUILD_FATRAS=ON \
   -DACTS_BUILD_FATRAS_GEANT4=ON \
   -DACTS_BUILD_EXAMPLES_DD4HEP=ON \
@@ -40,7 +38,7 @@ cmake -B acts-build -S acts_faser2 \
 cmake --build acts-build --target install -j4
 ```
 
-ACTS needs to be source before each use:
+ACTS needs to be sourced before each use:
 ```
 cd acts_faser2
 source CI/setup_cvmfs_lcg.sh
@@ -51,10 +49,9 @@ Or you can directly use the bash script
 cd acts_faser2
 source Setup_acts.sh
 
-Setup can be testied using this tutorial examples if bug contact me: olivier.salin@cern.ch
+Setup can be tested using these tutorial examples
 ```
 cd ..
-python acts_faser2/Examples/Scripts/Python/truth_tracking_kalman.py
 python acts_faser2/Examples/Scripts/Python/truth_tracking_telescope.py
 python acts_faser2/Examples/Scripts/Python/truth_tracking_Faser2.py
 ```
