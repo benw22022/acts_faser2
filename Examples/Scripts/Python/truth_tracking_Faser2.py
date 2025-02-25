@@ -202,8 +202,8 @@ if "__main__" == __name__:
     )
 
     #If one wants to use input Particle
-    inputParticlePath = Path("ACTSROOT/events_14TeV_m0.01GeV_c0.001_to_e_e_s1.root") #! Breaks after 1046
-    inputParticlePath = Path("ACTSROOT/events_14TeV_m0.01GeV_c0.0001623776739188721_to_e_e_s1.root")
+    inputParticlePath = Path("ACTSROOT/events_14TeV_m0.01GeV_c0.001_to_e_e_s1.root") #! Breaks after event 1046
+    # inputParticlePath = Path("ACTSROOT/events_14TeV_m0.01GeV_c0.0001623776739188721_to_e_e_s1.root")
     if not inputParticlePath.exists():
         print("File does not exist")
         inputParticlePath = None
@@ -213,9 +213,10 @@ if "__main__" == __name__:
 
     ## Constant Magnetic Field Option
     # field = acts.ConstantBField(acts.Vector3(0, 0, 0.2 * u.T))
+    field = acts.ConstantBField(acts.Vector3(0, 0 * u.T, 1.0 * u.T))
     
-    ## Restricted Magnetic Field Option with the dimension of Samurai magnet
-    field = acts.RestrictedBField(acts.Vector3(0, 0 * u.T, 1.0 * u.T))
+    ##* Restricted Magnetic Field Option with the dimension of Samurai magnet 
+    # field = acts.RestrictedBField(acts.Vector3(0, 0 * u.T, 1.0 * u.T))
     
     ## Restricted Magnetic Field Option with the dimension of Industrial magnet for 3 Modules (2 and 4 Modules option also exist) 
     # field = acts.RestrictedBField_Indu_3Modules(acts.Vector3(0, 0 * u.T, 0.4 * u.T))
