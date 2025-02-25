@@ -38,7 +38,7 @@ def runTruthTrackingFaser2(
     )
 
     s = s or acts.examples.Sequencer(
-        events=5000, numThreads=-1, logLevel=acts.logging.INFO
+        events=15000, numThreads=-1, logLevel=acts.logging.INFO
     )
 
     for d in decorators:
@@ -202,12 +202,13 @@ if "__main__" == __name__:
     )
 
     #If one wants to use input Particle
-    inputParticlePath = Path("Input_path")
+    inputParticlePath = Path("ACTSROOT/events_14TeV_m0.01GeV_c0.001_to_e_e_s1.root") #! Breaks after 1046
+    inputParticlePath = Path("ACTSROOT/events_14TeV_m0.01GeV_c0.0001623776739188721_to_e_e_s1.root")
     if not inputParticlePath.exists():
         print("File does not exist")
         inputParticlePath = None
 
-    outputDir = Path(f"./Output_tracking/")
+    outputDir = Path(f"./Output_tracking-TEST/")
     outputDir.mkdir(parents=True, exist_ok=True)
 
     ## Constant Magnetic Field Option
